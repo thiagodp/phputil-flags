@@ -1,7 +1,7 @@
 <?php
 namespace phputil\flags;
 
-use \DateTime;
+use DateTime;
 
 class FlagMetadata {
 
@@ -31,7 +31,7 @@ class FlagMetadata {
         $this->tags = $tags;
     }
 
-    function updateAccess() {
+    public function updateAccess() {
         $this->updatedAt = new DateTime();
         $this->accessCount++;
     }

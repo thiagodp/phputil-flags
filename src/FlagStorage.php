@@ -11,7 +11,7 @@ interface FlagStorage {
      *
      * @throws FlagException
      */
-    function get( string $key ): ?FlagData;
+    public function get( string $key ): ?FlagData;
 
     /**
      * Retrieves and updates a flag with the given key, if it exists.
@@ -23,7 +23,7 @@ interface FlagStorage {
      *
      * @throws FlagException
      */
-    function touch( string $key, ?bool $enabled = null ): ?FlagData;
+    public function touch( string $key, ?bool $enabled = null ): ?FlagData;
 
     /**
      * Sets a flag.
@@ -33,7 +33,7 @@ interface FlagStorage {
      *
      * @throws FlagException
      */
-    function set( string $key, FlagData $data ): void;
+    public function set( string $key, FlagData $data ): void;
 
     /**
      * Removes a flag.
@@ -43,7 +43,7 @@ interface FlagStorage {
      *
      * @throws FlagException
      */
-    function remove( string $key ): bool;
+    public function remove( string $key ): bool;
 
     /**
      * Returns all the flags.
@@ -53,6 +53,6 @@ interface FlagStorage {
      *
      * @throws FlagException
      */
-    function getAll( array $options = [] ): array;
+    public function getAll( array $options = [] ): array;
 }
 ?>

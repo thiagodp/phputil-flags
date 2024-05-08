@@ -18,14 +18,30 @@ $rules = [
         'min_line_breaks' => 0,
         'max_line_breaks' => 1,
     ],
-    'blank_line_before_statement' => [
-        'statements' => [
-            'do', 'for', 'foreach', 'if', 'switch', 'try', 'while',
-        ]
-    ],
+    // 'blank_line_before_statement' => [
+    //     'statements' => [
+    //         'do', 'for', 'foreach', 'if', 'switch', 'try', 'while',
+    //     ]
+    // ],
     'line_ending' => true,
     'no_blank_lines_after_class_opening' => false,
-    'no_extra_blank_lines' => ['tokens' => ['attribute', 'break', 'case', 'continue', 'curly_brace_block', 'default', 'extra', 'parenthesis_brace_block', 'return', 'square_brace_block', 'switch', 'throw', 'use']],
+    'no_extra_blank_lines' => [
+        'tokens' => [
+            'attribute',
+            'break',
+            'case',
+            'continue',
+            // 'curly_brace_block',
+            'default',
+            'extra',
+            'parenthesis_brace_block',
+            'return',
+            'square_brace_block',
+            'switch',
+            'throw',
+            'use'
+            ]
+        ],
     'single_line_empty_body' => true,
     'single_line_after_imports' => true,
 
@@ -51,7 +67,7 @@ $rules = [
         'keep_multiple_spaces_after_comma' => false
     ],
     'object_operator_without_whitespace' => true,
-    'spaces_inside_parentheses' => true,
+    // 'spaces_inside_parentheses' => true,
     'trim_array_spaces' => false,
     'whitespace_after_comma_in_array' => true,
     'no_multiline_whitespace_around_double_arrow' => true,

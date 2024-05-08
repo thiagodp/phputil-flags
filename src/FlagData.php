@@ -4,7 +4,9 @@ namespace phputil\flags;
 class FlagData {
 
     public string $key;
+
     public bool $enabled;
+
     public FlagMetadata $metadata;
 
     public function __construct(

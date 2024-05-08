@@ -2,6 +2,6 @@
 namespace phputil\flags;
 
 interface FlagVerificationStrategy {
-    function isEnabled( string $key ): bool;
+    public function isEnabled( string $key ): bool;
 }
 ?>

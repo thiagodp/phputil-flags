@@ -94,6 +94,26 @@ Retrieving flag data:
 $flagData = $flag->getStorage()->get( 'my-cool-feature' ); // null if not found
 ```
 
+Adding a listener:
+```php
+// ...
+use phputil\flags\FlagListener;
+use phputil\flags\FlagData;
+
+$myListener = new class implements FlagListener {
+  public function notify( string $event, FlagData $flagData ): void {
+    if ( $event === 'change' ) {
+        echo 'Flag ', $flagData->key, ' is now ', $flagData->enabled ? 'enabled': 'disabled', PHP_EOL;
+    } else if ( $event === 'removal' ) {
+        echo 'Flag ', $flagData->key, ' was removed.', PHP_EOL;
+    }
+  }
+};
+
+$flag->getListeners()->add( $myListener );
+
+$flag->enable( 'my-cool-feature' ); // Notify the listener
+```
 
 ## Customization
 
@@ -142,7 +162,7 @@ Define a listener by:
 How to configure it:
 
 ```php
-$flag->listeners->add( /* pass your listener here */ );
+$flag->getListeners()->add( /* pass your listener here */ );
 ```
 
 

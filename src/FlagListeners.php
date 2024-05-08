@@ -7,7 +7,7 @@ class FlagListeners {
     private $listeners = [];
 
     public function add( FlagListener $listener ): FlagListeners {
-        $this->listeners []= $listener;
+        $this->listeners [] = $listener;
         return $this;
     }
 
@@ -21,7 +21,7 @@ class FlagListeners {
     }
 
     public function addAll( ...$listeners ): FlagListeners {
-        array_push( $this->listeners, ...$listeners  );
+        array_push( $this->listeners, ...$listeners );
         return $this;
     }
 

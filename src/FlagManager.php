@@ -9,9 +9,9 @@ class FlagManager {
     /** @var array<int, FlagVerificationStrategy> */
     private array $verificationStrategies;
 
-    private FlagStorage $storage;
+    private FlagStorage $storage; // TODO: make public readonly when migrating to PHP 8.0
 
-    public FlagListeners $listeners;
+    private FlagListeners $listeners; // TODO: make public readonly when migrating to PHP 8.0
 
     /**
      * @param ?FlagStorage $storage Storage
@@ -29,7 +29,6 @@ class FlagManager {
         }
         $this->listeners = new FlagListeners();
     }
-
 
     public function isEnabled( string $flag, array $strategies = [] ): bool {
         if ( count( $strategies ) < 1 ) {
@@ -56,6 +55,7 @@ class FlagManager {
         if ( $flagData === null ) {
             return false;
         }
+
         $hasRemoved = $this->storage->remove( $flag );
         if ( $hasRemoved ) {
             $this->listeners->notify( REMOVAL_EVENT, $flagData );
@@ -63,9 +63,12 @@ class FlagManager {
         return $hasRemoved;
     }
 
-
-    public function getStorage() {
+    public function getStorage(): FlagStorage {
         return $this->storage;
+    }
+
+    public function getListeners(): FlagListeners {
+        return $this->listeners;
     }
 
     /**
@@ -84,5 +87,4 @@ class FlagManager {
         }
         return true;
     }
-
 }
