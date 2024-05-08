@@ -31,6 +31,7 @@
         "phputil/restage": "^0.3.0"
     },
     "scripts": {
+        "hooks:install": "captainhook install --only-enabled -n",
         "test": "kahlan",
         "check": "phpstan analyze src --level=5",
         "style:check": "php-cs-fixer check --verbose",
