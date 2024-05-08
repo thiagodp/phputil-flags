@@ -1,0 +1,39 @@
+{
+    "name": "phputil/flags",
+    "description": "A lightweight, extensible feature flags framework for PHP",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "feature",
+        "flag",
+        "toggle",
+        "php",
+        "framework",
+        "library"
+    ],
+    "autoload": {
+        "psr-4": {
+            "phputil\\flags\\": [
+                "src/",
+                "src/storages",
+                "src/strategies"
+            ]
+        }
+    },
+    "require": {
+        "php": "^7.4.0"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^1.10",
+        "kahlan/kahlan": "^5.2",
+        "captainhook/captainhook": "^5.18",
+        "friendsofphp/php-cs-fixer": "^3.35",
+        "phputil/restage": "^0.3.0"
+    },
+    "scripts": {
+        "test": "kahlan",
+        "check": "phpstan analyze src --level=5",
+        "style:check": "php-cs-fixer check --verbose",
+        "style:fix": "php-cs-fixer fix --verbose"
+    }
+}
