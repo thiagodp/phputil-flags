@@ -12,6 +12,9 @@
         "actions": [
             {
                 "action": "composer test"
+            },
+            {
+                "action": "composer run-script style:fix"
             }
         ]
     },
