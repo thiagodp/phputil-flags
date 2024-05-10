@@ -4,6 +4,16 @@ namespace phputil\flags;
 interface FlagStorage {
 
     /**
+     * Retrieves the enabled state of a flag.
+     *
+     * @param string $key Key
+     * @return bool
+     *
+     * @throws FlagException
+     */
+    public function isEnabled( string $key ): bool;
+
+    /**
      * Retrieves a flag with the given key, without changing the flag.
      *
      * @param string $key Key

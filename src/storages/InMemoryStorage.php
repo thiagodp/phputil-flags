@@ -9,6 +9,11 @@ class InMemoryStorage implements FlagStorage {
     /** @var array<string, FlagData> */
     private array $flags = [];
 
+    public function isEnabled( string $key ): bool {
+        $flag = $this->get( $key );
+        return $flag === null ? false : $flag->enabled;
+    }
+
     /** @inheritDoc */
     public function get( string $key ): ?FlagData {
         return $this->flags[ $key ] ?? null;
