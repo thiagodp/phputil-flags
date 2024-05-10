@@ -2,7 +2,6 @@
 
 [![Version](https://poser.pugx.org/phputil/flags/v?style=flat-square)](https://packagist.org/packages/phputil/flags)
 ![Build](https://github.com/thiagodp/phputil-flags/actions/workflows/ci.yml/badge.svg?style=flat)
-[![Coverage](https://raw.githubusercontent.com/thiagodp/phputil-flags/image-data/output/coverage.svg)](https://packagist.org/packages/phputil/flags)
 [![License](https://poser.pugx.org/phputil/phputil-flags/license?style=flat-square)](https://packagist.org/packages/phputil/flags)
 [![PHP](http://poser.pugx.org/phputil/flags/require/php)](https://packagist.org/packages/phputil/flags)
 
