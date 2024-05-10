@@ -18,6 +18,7 @@ class StorageBasedVerificationStrategy implements FlagVerificationStrategy {
     }
 
     public function isEnabled( string $key ): bool {
-        return $this->storage->touch( $key )->enabled;
+        $flagData = $this->storage->get( $key );
+        return $flagData === null ? false : $flagData->enabled;
     }
 }

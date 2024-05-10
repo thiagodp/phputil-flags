@@ -4,7 +4,16 @@ namespace phputil\flags;
 class FlagListeners {
 
     /** @var array<int, FlagListener> */
-    private $listeners = [];
+    private array $listeners = [];
+
+    /**
+     * Returns all the listeners.
+     *
+     * @return array<int, FlagListener>
+     */
+    public function getAll(): array {
+        return $this->listeners;
+    }
 
     public function add( FlagListener $listener ): FlagListeners {
         $this->listeners [] = $listener;

@@ -54,5 +54,10 @@ interface FlagStorage {
      * @throws FlagException
      */
     public function getAll( array $options = [] ): array;
+
+    /**
+     * Returns the number of stored flags.
+     */
+    public function count(): int;
 }
 ?>

@@ -7,6 +7,8 @@ class FlagMetadata {
 
     public int $id;
 
+    public string $description;
+
     public DateTime $createdAt;
 
     public DateTime $updatedAt;
@@ -18,12 +20,14 @@ class FlagMetadata {
 
     public function __construct(
         int $id = 0,
+        string $description = '',
         ?DateTime $createdAt = null,
         ?DateTime $updatedAt = null,
         int $accessCount = 0,
         array $tags = []
     ) {
         $this->id = $id;
+        $this->description = $description;
         $now = new DateTime();
         $this->createdAt = $createdAt ?? $now;
         $this->updatedAt = $updatedAt ?? $now;

@@ -23,11 +23,6 @@ class FlagData {
         $this->metadata->updateAccess();
         return $this;
     }
-
-    public function setEnabled( bool $enabled ): FlagData {
-        $this->enabled = $enabled;
-        return $this;
-    }
 }
 
 ?>

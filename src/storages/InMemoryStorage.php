@@ -7,7 +7,7 @@ namespace phputil\flags;
 class InMemoryStorage implements FlagStorage {
 
     /** @var array<string, FlagData> */
-    private array $flags;
+    private array $flags = [];
 
     /** @inheritDoc */
     public function get( string $key ): ?FlagData {
@@ -18,6 +18,8 @@ class InMemoryStorage implements FlagStorage {
     public function touch( string $key, ?bool $enabled = null ): ?FlagData {
         $flag = $this->get( $key ) ??
             new FlagData( $key, false, new FlagMetadata() );
+
+        $this->set( $key, $flag );
 
         if ( $enabled !== null ) {
             $flag->enabled = $enabled;
@@ -43,5 +45,10 @@ class InMemoryStorage implements FlagStorage {
     /** @inheritDoc */
     public function getAll( array $options = [] ): array {
         return array_values( $this->flags );
+    }
+
+    /** @inheritDoc */
+    public function count(): int {
+        return count( $this->flags );
     }
 }
