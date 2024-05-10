@@ -20,13 +20,13 @@ composer require phputil/flags
 
 ## Extensions
 
-Official extensions available:
+Official extensions:
 
-- [`phputil/flags-pdo`](https://github.com/thiagodp/phputil-flags-pdo) - a [PDO](https://www.php.net/manual/en/intro.pdo.php)-based [storage](#storages).
-- [`phputil/flags-firebase`](https://github.com/thiagodp/phputil-flags-firebase) - a [Firebase](https://firebase.google.com/)-based [storage](#storages).
-- [`phputil/flags-webhooks`](https://github.com/thiagodp/phputil-flags-webhooks) a [listener](#listeners) that works like a webhook, by notifying external APIs about flags' changes.
+- ⏳ SOON - [`phputil/flags-pdo`](https://github.com/thiagodp/phputil-flags-pdo) - a [PDO](https://www.php.net/manual/en/intro.pdo.php)-based [storage](#storages).
+- ⏳ SOON - [`phputil/flags-firebase`](https://github.com/thiagodp/phputil-flags-firebase) - a [Firebase](https://firebase.google.com/)-based [storage](#storages).
+- ⏳ SOON - [`phputil/flags-webhooks`](https://github.com/thiagodp/phputil-flags-webhooks) a [listener](#listeners) that works like a webhook, by notifying external APIs about flags' changes.
 
-Third-party extensions available:
+Third-party extensions:
 - Create yours and open an Issue to be evaluated. It may appear here.
 
 
@@ -48,7 +48,7 @@ if ( $flag->isEnabled( 'my-cool-feature' ) ) {
 }
 ```
 
-Customizing a certain checking:
+Customizing a certain verification:
 ```php
 // ...
 use phputil\flags\FlagVerificationStrategy;
@@ -68,7 +68,7 @@ if ( $flag->isEnabled( 'my-cool-feature', [ $myLuckBasedStrategy ] ) ) {
 }
 ```
 
-Customizing all the checkings:
+Customizing all the verifications:
 
 ```php
 $flag = new FlagManager( null, [ $myLuckBasedStrategy ] );

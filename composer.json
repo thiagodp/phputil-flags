@@ -21,7 +21,7 @@
         }
     },
     "require": {
-        "php": "^7.4.0"
+        "php": "^7.4 || ^8.0"
     },
     "require-dev": {
         "phpstan/phpstan": "^1.10",
@@ -36,6 +36,7 @@
         "cov": "kahlan --coverage=4",
         "check": "phpstan analyze src --level=5",
         "style:check": "php-cs-fixer check --verbose",
-        "style:fix": "php-cs-fixer fix --verbose && restage"
+        "style:fix": "php-cs-fixer fix --verbose && restage",
+        "req": "composer check-platform-reqs --no-dev --ansi"
     }
 }
