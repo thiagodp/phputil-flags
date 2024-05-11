@@ -49,6 +49,11 @@ class InMemoryStorage implements FlagStorage {
     }
 
     /** @inheritDoc */
+    public function removeAll(): void {
+        $this->flags = [];
+    }
+
+    /** @inheritDoc */
     public function getAll( array $options = [] ): array {
         return array_values( $this->flags );
     }
@@ -57,4 +62,5 @@ class InMemoryStorage implements FlagStorage {
     public function count( array $options = [] ): int {
         return count( $this->flags );
     }
+
 }

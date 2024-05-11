@@ -57,6 +57,13 @@ interface FlagStorage {
     public function remove( string $key ): bool;
 
     /**
+     * Removes all the flags.
+     *
+     * @throws FlagException
+     */
+    public function removeAll(): void;
+
+    /**
      * Returns all the flags.
      *
      * @param array<string, mixed> $options Options. Default to [].
@@ -75,5 +82,6 @@ interface FlagStorage {
      * @throws FlagException
      */
     public function count( array $options = [] ): int;
+
 }
 ?>
