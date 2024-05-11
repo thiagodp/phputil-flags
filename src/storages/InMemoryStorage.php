@@ -34,8 +34,9 @@ class InMemoryStorage implements FlagStorage {
     }
 
     /** @inheritDoc */
-    public function set( string $key, FlagData $flag ): void {
+    public function set( string $key, FlagData $flag ): bool {
         $this->flags[ $key ] = $flag;
+        return true;
     }
 
     /** @inheritDoc */
@@ -53,7 +54,7 @@ class InMemoryStorage implements FlagStorage {
     }
 
     /** @inheritDoc */
-    public function count(): int {
+    public function count( array $options = [] ): int {
         return count( $this->flags );
     }
 }

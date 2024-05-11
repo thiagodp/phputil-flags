@@ -40,10 +40,11 @@ interface FlagStorage {
      *
      * @param string $key Key
      * @param FlagData $data Flag data
+     * @return bool `true` if the key was found and updated.
      *
      * @throws FlagException
      */
-    public function set( string $key, FlagData $data ): void;
+    public function set( string $key, FlagData $data ): bool;
 
     /**
      * Removes a flag.
@@ -67,7 +68,12 @@ interface FlagStorage {
 
     /**
      * Returns the number of stored flags.
+     *
+     * @param array<string, mixed> $options Options. Default to [].
+     * @return int
+     *
+     * @throws FlagException
      */
-    public function count(): int;
+    public function count( array $options = [] ): int;
 }
 ?>
