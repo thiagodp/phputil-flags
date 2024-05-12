@@ -15,8 +15,8 @@
         "psr-4": {
             "phputil\\flags\\": [
                 "src/",
-                "src/storages",
-                "src/strategies"
+                "src/storages/",
+                "src/strategies/"
             ]
         }
     },
@@ -33,6 +33,7 @@
     "scripts": {
         "hooks:install": "captainhook install --only-enabled -n",
         "test": "kahlan --reporter=tree",
+        "test:ci": "kahlan",
         "cov": "kahlan --coverage=4",
         "cov:badge": "kahlan --clover=clover.xml",
         "check": "phpstan analyze src --level=5",

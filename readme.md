@@ -28,7 +28,7 @@ composer require phputil/flags
 
 Official extensions:
 
-- ⏳ SOON - [`phputil/flags-pdo`](https://github.com/thiagodp/phputil-flags-pdo) - a [PDO](https://www.php.net/manual/en/intro.pdo.php)-based [storage](#storages).
+- [`phputil/flags-pdo`](https://github.com/thiagodp/phputil-flags-pdo) - a [PDO](https://www.php.net/manual/en/intro.pdo.php)-based [storage](#storages).
 - ⏳ SOON - [`phputil/flags-firebase`](https://github.com/thiagodp/phputil-flags-firebase) - a [Firebase](https://firebase.google.com/)-based [storage](#storages).
 - ⏳ SOON - [`phputil/flags-webhooks`](https://github.com/thiagodp/phputil-flags-webhooks) a [listener](#listeners) that works like a webhook, by notifying external APIs about flags' changes.
 
@@ -176,7 +176,7 @@ $flag->getListeners()->add( /* pass your listener here */ );
 
 - [x] Extensible library
 - [ ] Official extensions:
-  - [ ] PDO-based storage
+  - [x] PDO-based storage
   - [ ] Firebase-based storage
   - [ ] Webhook-like listener
 - [ ] REST API (external repository)
