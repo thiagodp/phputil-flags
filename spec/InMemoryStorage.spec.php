@@ -30,4 +30,12 @@ describe( 'InMemoryStorage', function() {
 
     } );
 
+    it( 'generates an incremental id every new flag', function() {
+        $storage = new InMemoryStorage();
+        $foo = $storage->touch( 'foo' );
+        expect( $foo->metadata->id )->toBe( 1 );
+        $bar = $storage->touch( 'bar' );
+        expect( $bar->metadata->id )->toBe( 2 );
+    } );
+
 } );

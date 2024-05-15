@@ -9,6 +9,8 @@ class InMemoryStorage implements FlagStorage {
     /** @var array<string, FlagData> */
     private array $flags = [];
 
+    private int $lastId = 0;
+
     public function isEnabled( string $key ): bool {
         $flag = $this->get( $key );
         return $flag === null ? false : $flag->enabled;
@@ -21,8 +23,9 @@ class InMemoryStorage implements FlagStorage {
 
     /** @inheritDoc */
     public function touch( string $key, ?bool $enabled = null ): ?FlagData {
+
         $flag = $this->get( $key ) ??
-            new FlagData( $key, false, new FlagMetadata() );
+            new FlagData( $key, false, new FlagMetadata( ++$this->lastId ) );
 
         $this->set( $key, $flag );
 
