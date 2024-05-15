@@ -1,4 +1,5 @@
 <?php
+
 namespace phputil\flags;
 
 class FlagData {
@@ -24,5 +25,3 @@ class FlagData {
         return $this;
     }
 }
-
-?>

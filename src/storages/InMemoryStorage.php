@@ -1,4 +1,5 @@
 <?php
+
 namespace phputil\flags;
 
 /**
@@ -65,5 +66,4 @@ class InMemoryStorage implements FlagStorage {
     public function count( array $options = [] ): int {
         return count( $this->flags );
     }
-
 }

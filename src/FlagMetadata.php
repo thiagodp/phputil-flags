@@ -1,4 +1,5 @@
 <?php
+
 namespace phputil\flags;
 
 use DateTime;
@@ -40,4 +41,3 @@ class FlagMetadata {
         $this->accessCount++;
     }
 }
-?>

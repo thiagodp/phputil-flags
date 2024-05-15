@@ -1,4 +1,5 @@
 <?php
+
 namespace phputil\flags;
 
 interface FlagStorage {
@@ -84,4 +85,3 @@ interface FlagStorage {
     public function count( array $options = [] ): int;
 
 }
-?>

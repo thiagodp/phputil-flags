@@ -1,4 +1,5 @@
 <?php
+
 namespace phputil\flags;
 
 class FlagListeners {
@@ -45,4 +46,3 @@ class FlagListeners {
         }
     }
 }
-?>
