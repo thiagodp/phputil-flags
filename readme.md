@@ -30,7 +30,7 @@ Official extensions:
 
 - [`phputil/flags-pdo`](https://github.com/thiagodp/phputil-flags-pdo) - a [PDO](https://www.php.net/manual/en/intro.pdo.php)-based [storage](#storages).
 - ⏳ SOON - [`phputil/flags-firebase`](https://github.com/thiagodp/phputil-flags-firebase) - a [Firebase](https://firebase.google.com/)-based [storage](#storages).
-- ⏳ SOON - [`phputil/flags-webhooks`](https://github.com/thiagodp/phputil-flags-webhooks) a [listener](#listeners) that works like a webhook, by notifying external APIs about flags' changes.
+- [`phputil/flags-webhooks`](https://github.com/thiagodp/phputil-flags-webhooks) a [listener](#listeners) that works like a webhook, by notifying external APIs about flags' changes.
 
 Third-party extensions:
 - Create yours and open an Issue to be evaluated. It may appear here.
@@ -116,7 +116,8 @@ $myListener = new class implements FlagListener {
   }
 };
 
-$flag->getListeners()->add( $myListener );
+$flag->addListener( $myListener ); // v0.5.0+
+// or $flag->getListeners()->add( $myListener );
 
 $flag->enable( 'my-cool-feature' ); // Notify the listener
 ```
@@ -127,7 +128,7 @@ $flag->enable( 'my-cool-feature' ); // Notify the listener
 ### Storages
 
 Use a different flag storage by:
-- Creating your own, extending [`FlagStorage`](/src/FlagStorage.php);
+- Creating your own, extending [`FlagStorage`](/src/FlagStorage.php); OR
 - Using an external [storage extension](#extensions).
 
 How to configure it:
@@ -143,7 +144,7 @@ Storages available in the framework:
 ### Strategies
 
 Use a flag verification strategy by:
-- Creating your own, extending [`FlagVerificationStrategy`](/src/FlagVerificationStrategy.php);
+- Creating your own, extending [`FlagVerificationStrategy`](/src/FlagVerificationStrategy.php); OR
 - Using an external [strategy extension](#extensions).
 
 How to configure it globally:
@@ -162,13 +163,14 @@ Strategies available in the framework:
 ### Listeners
 
 Define a listener by:
-- Creating your own, extending [`FlagListener`](/src/FlagListener.php);
+- Creating your own, extending [`FlagListener`](/src/FlagListener.php); OR
 - Using an external [listener extension](#extensions).
 
 How to configure it:
 
 ```php
-$flag->getListeners()->add( /* pass your listener here */ );
+$flag->addListener( $myListener ); // v0.5.0+
+// or $flag->getListeners()->add( $myListener );
 ```
 
 
@@ -178,7 +180,7 @@ $flag->getListeners()->add( /* pass your listener here */ );
 - [ ] Official extensions:
   - [x] PDO-based storage
   - [ ] Firebase-based storage
-  - [ ] Webhook-like listener
+  - [x] Webhook-like listener
 - [ ] REST API (external repository)
 - [ ] Web-based control panel (external repository)
 

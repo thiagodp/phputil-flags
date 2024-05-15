@@ -246,5 +246,22 @@ describe( 'FlagManager', function() {
 
     } );
 
+    it( 'provides a method to add a listener directly', function() {
+
+        $listener = new class implements FlagListener {
+            public $count = 0;
+            public function notify(string $event, FlagData $flag): void {
+                $this->count++;
+            }
+        };
+
+        $fm = new FlagManager();
+        $fm->addListener( $listener );
+
+        $fm->enable( 'foo' );
+
+        expect( $listener->count )->toBeGreaterThan( 0 );
+    } );
+
 } );
 ?>

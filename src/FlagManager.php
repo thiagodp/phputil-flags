@@ -104,6 +104,11 @@ class FlagManager {
         return $this->listeners;
     }
 
+    public function addListener( FlagListener $listener ): FlagManager {
+        $this->getListeners()->add( $listener );
+        return $this;
+    }
+
     /**
      * Returns `true` if all the strategies return `true.
      *
