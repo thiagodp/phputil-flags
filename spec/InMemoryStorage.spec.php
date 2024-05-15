@@ -30,6 +30,17 @@ describe( 'InMemoryStorage', function() {
 
     } );
 
+    describe( 'removeAll()', function() {
+        it( 'can remove all the flags', function() {
+            $storage = new InMemoryStorage();
+            $storage->set( 'foo', new FlagData( 'foo', false, new FlagMetadata() ) );
+            $storage->set( 'bar', new FlagData( 'bar', false, new FlagMetadata() ) );
+            expect( $storage->count() )->toBe( 2 );
+            $storage->removeAll();
+            expect( $storage->count() )->toBe( 0 );
+        } );
+    } );
+
     it( 'generates an incremental id every new flag', function() {
         $storage = new InMemoryStorage();
         $foo = $storage->touch( 'foo' );

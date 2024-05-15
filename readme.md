@@ -156,6 +156,7 @@ $flag = new FlagManager( null, $strategies );
 
 Strategies available in the framework:
 - [`StorageBasedVerificationStrategy`](src/strategies/StorageBasedVerificationStrategy.php), that checks flags in a storage.
+- [`EnvBasedVerificationStrategy`](src/strategies/EnvBasedVerificationStrategy.php), that checks flags based on environment variables.
 
 👉 A flag is considered enabled when **all** the strategies considered it enabled.
 
